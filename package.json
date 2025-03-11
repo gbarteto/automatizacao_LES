@@ -18,6 +18,7 @@
   "homepage": "https://github.com/gbarteto/automatizacao_LES#readme",
   "description": "",
   "dependencies": {
+    "automatizacao_les": "file:",
     "cypress": "^14.1.0"
   }
 }
