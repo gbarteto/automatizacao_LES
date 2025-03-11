@@ -1,0 +1,23 @@
+{
+  "name": "automatizacao_les",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gbarteto/automatizacao_LES.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gbarteto/automatizacao_LES/issues"
+  },
+  "homepage": "https://github.com/gbarteto/automatizacao_LES#readme",
+  "description": "",
+  "dependencies": {
+    "cypress": "^14.1.0"
+  }
+}
