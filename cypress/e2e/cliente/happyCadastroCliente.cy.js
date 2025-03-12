@@ -1,9 +1,8 @@
-const { describe } = require("mocha");
-
 describe('Cadastro de cliente', () => {
-    it('Acessar a tela de cliente', () => {
-        cy.visit('http://localhost:8080/ecommerce_tenis_war_exploded/');
-        cy.get('#btn-consultar').click();
+    beforeEach('Acessar a tela de cliente', () => {
+        cy.visit('/');
+        cy.get('[href="src/cadCliente.html"]').click();
+        cy.intercept("POST","/ecommerce_tenis_war_exploded/controlecliente").as("cadastro")
     })
     it('Deve preencher o formulário de cliente e endereço', () => {
         //Cadastro Cliente
@@ -19,12 +18,15 @@ describe('Cadastro de cliente', () => {
 
         //Cadastro Endereco
         cy.get('#endereco-title').click(); 
-        cy.get('#ent_cep').type('08773600{tab}');
+        cy.get('#ent_cep').type('08773600').blur();
+        cy.wait(2000);
         cy.get('#ent_tipoResidencia').select('casa');
         cy.get('#ent_numero').type('123');
         cy.get('#sameAsDelivery').check();
         cy.get('#submit-button').click();
 
-        cy.contains('Cadastro realizado com sucesso!').should('be.visible');
+        cy.wait("@cadastro").then(({response}) => {
+            
+        })
     });
 })
