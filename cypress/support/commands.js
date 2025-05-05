@@ -23,3 +23,20 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('saveSessionStorage', () => {
+    Object.keys(sessionStorage).forEach(key => {
+      Cypress.env(`sessionStorage_${key}`, sessionStorage.getItem(key));
+    });
+  });
+  
+  Cypress.Commands.add('restoreSessionStorage', () => {
+    Object.keys(Cypress.env())
+      .filter(key => key.startsWith('sessionStorage_'))
+      .forEach(key => {
+        const value = Cypress.env(key);
+        const realKey = key.replace('sessionStorage_', '');
+        sessionStorage.setItem(realKey, value);
+      });
+  });
+  

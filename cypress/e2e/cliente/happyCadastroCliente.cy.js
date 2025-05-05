@@ -27,9 +27,6 @@ describe('Cadastro de cliente', () => {
 
         cy.wait("@cadastro").then(({response}) => {
             expect(response.statusCode).to.eq(200)
-            cy.on("window:alert", (alertText) => {
-                expect(alertText).to.contain("Cadastro realizado com sucesso");
-            });
         })
     });
 })

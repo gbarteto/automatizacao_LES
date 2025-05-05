@@ -8,4 +8,12 @@ module.exports = defineConfig({
     },
     baseUrl: 'http://localhost:8080/ecommerce_tenis_war_exploded/',
   },
+
+  reporter: 'mochawesome',
+  reporterOptions: {
+    html: true,
+    json: false,
+    reportDir: 'cypress/reports/mochawesome-report',
+    timestamp: 'ddmmyyyy_HHMMss',
+  }
 });
