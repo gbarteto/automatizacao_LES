@@ -7,10 +7,10 @@ describe('Acessando Pedido e Avançando Situação', () => {
     })
     it('Deve avançar a situação da troca', () => {
         cy.get('#trocas-title').click()
-        cy.get('.odd > :nth-child(4)').should('contain', 'TROCADO')
+        cy.get('#table-trocas > tbody > :nth-child(1) > :nth-child(4)').should('contain', 'TROCADO')
         cy.on('window:alert', (str) => {
             expect(str).to.equal('Erro: Não há próximo status disponível - já está no status final');
         })
-        cy.get(':nth-child(6) > .btn-warning').click()
+        cy.get(':nth-child(1) > :nth-child(6) > .btn-warning').click()
     })
 })

@@ -40,7 +40,7 @@ describe('Venda Cliente - Erros', () => {
         cy.get('#cpf-ident').type('71301412040')
         cy.get('button').click()
         cy.get('.endereco-container').click({force:true})
-        cy.get('[data-id="1"]').click()
+        cy.get('.tipo-entrega > [data-id="1"]').click()
         cy.get('#btnProsseguir').click()
         cy.on('window:alert', (str) => {
             expect(str).to.equal('Erro ao montar o pedido: Erro interno na aplicação');

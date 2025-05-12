@@ -7,6 +7,8 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
     baseUrl: 'http://localhost:8080/ecommerce_tenis_war_exploded/',
+    viewportHeight: 1080,
+    viewportWidth: 1920
   },
 
   reporter: 'mochawesome',

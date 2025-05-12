@@ -11,6 +11,6 @@ describe('Acessando Pedido e Avançando Situação', () => {
         cy.on('window:alert', (str) => {
             expect(str).to.equal('Erro: Não há próximo status disponível - já está no status final');
         })
-        cy.get(':nth-child(7) > .btn-warning').click()
+        cy.get(':nth-child(1) > :nth-child(7) > .btn-warning').click()
     })
 })
